@@ -1,11 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head></h:head> 
-<body> 
-	<h:outputLabel value="#{controlePrincipal.mensagem}" />	
-</body> 
+<h:head>
+	<title>Java Server Faces</title>
+</h:head>
+<body>
+	<h:outputLabel value="#{controlePrincipal.mensagem}" />
+	<h:form>
+		<h:commandLink action="sobre" value="Sobre... navegação estática." /> <br/>
+		<h:commandLink action="#{controlePrincipal.sobre()}" value="Sobre... navegação dinâmica." /> <br/>
+		<h:commandLink action="#{controlePrincipal.sobreRedirecionado()}" value="Sobre... redirecionado." /> <br/>
+		<h:commandLink action="#{controlePrincipal.geraErro()}" value="Erro." /> <br/>
+		<h:commandLink action="#{controlePrincipal.geraLogin()}" value="Login." /> <br/>
+		
+	</h:form>
+</body>
 </html>
