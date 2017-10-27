@@ -1,18 +1,23 @@
 package controle;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "controlePrincipal")
-@RequestScoped
+@ApplicationScoped
 public class ControlePrincipal implements Serializable {
 	
 	private String mensagem;
 	
 	public ControlePrincipal() {
-		this.mensagem = "Bem vindo a sua primeira aplicação JSF 2";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss:S");		
+		this.mensagem = "A Aplicação foi ao ar no momento: "+sdf.format(Calendar.getInstance().getTime());
 	}
 	
 	public String getMensagem() {
