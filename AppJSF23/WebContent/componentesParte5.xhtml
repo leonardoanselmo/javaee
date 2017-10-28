@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Entrada de Dados</title>
+</h:head> 
+<h:body> 
+
+	<h:form id="formulario">
+		<h:inputHidden value="#{controleEntrada.id}" id="id"/>
+		<h:panelGrid columns="2">
+		
+			<f:facet name="header">Dados do usuário</f:facet>
+			
+			<h:outputLabel value="Nome: " for="nome" />
+			<h:inputText value="#{controleEntrada.nome}" id="nome" size="50" />
+			
+			<h:outputLabel value="Senha" for="senha" />
+			<h:inputSecret value="#{controleEntrada.senha}" id="senha" redisplay="true" />
+			
+			<h:outputLabel value="Observação" for="obs" />
+			<h:inputTextarea value="#{controleEntrada.obs}" id="obs" cols="50" rows="10"/>
+			
+			<h:outputLabel value="Grau Instrução" for="grau" />
+			<h:selectOneMenu value="#{controleEntrada.grauInstrucao}" id="grau">
+				<f:selectItem itemLabel="--- Selecione ---" noSelectionOption="true" />
+				<!-- gerado de maneira estática 
+				<f:selectItem itemLabel="Ensino Fundamental" itemValue="Ensino Fundamental"/>
+				<f:selectItem itemLabel="Ensino Médio" itemValue="Ensino Médio" />
+				<f:selectItem itemLabel="Ensino Superior" itemValue="Ensino Superior" />
+				-->
+				
+				<f:selectItems var="item" value="#{controleEntrada.grausInstrucao}" itemLabel="#{item}" itemValue="#{item}"/>
+			</h:selectOneMenu>
+			
+			
+			<h:column>
+				<div align="center">
+					<h:commandButton action="#{controleEntrada.processa()}" value="Processar" />				
+				</div>			
+			</h:column>		
+		
+		</h:panelGrid>
+		
+	</h:form>
+	<h:outputText value="#{controleEntrada.saida}" escape="false"/>
+
+</h:body> 
+</html>
