@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Componentes para saida de texto e imagens</title>
+</h:head> 
+<h:body> 
+	<h:form id="formulario">
+		<h:commandButton action="#{controleComponentes.geraTexto()}" value="Gerar texto" id="btnGerar" />	
+	</h:form>
+	<h:outputText value="#{controleComponentes.texto}" escape="false" /> <br/>
+	<h:outputFormat value="Eu moro em {0} - {1}" >
+		<f:param value="Garanhuns" />
+		<f:param value="Pernambuco" />		
+	</h:outputFormat>
+	<br/>
+	<h:graphicImage library="images"  name="Leonardo camisa verde.jpg"/>
+	<h:graphicImage url="/resources/images/Leonardo camisa verde.jpg" />
+	
+</h:body> 
+</html>
