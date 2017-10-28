@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Botões, links e entrada de texto</title>
+</h:head>
+<h:body>
+	<h:form id="formulario">
+		<h:commandButton action="#{controleComponentes.executar()}"
+			value="Enviar" id="btnEnviar" actionListener="#{controleComponentes.listener}"/><br/>
+			
+		<h:commandLink action="#{controleComponentes.executar()}"
+			value="Enviar" id="cmdEnviar" actionListener="#{controleComponentes.listener}"
+			onclick="alert('o botão foi acionado')"/><br/>
+		<h:outputText value="#{controleComponentes.idComponente}" /><br/>
+		<h:button outcome="login" value="Pagina de login por button"/> <br/>
+		<h:link outcome="login" value="Págian de login por link" /> <br/>
+
+	</h:form>
+	<h:outputLink value="http://www.globoesporte.com" >Globoesporte.com</h:outputLink>
+
+</h:body>
+</html>
