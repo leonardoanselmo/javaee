@@ -10,17 +10,18 @@ public class Aplicacao {
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/code_editora", "root",
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/teste_devmedia", "root",
 					"coelhoazul12");
 			Statement statement = connection.createStatement();
-			statement.executeQuery("SELECT * FROM users");
+			statement.executeQuery("SELECT * FROM TB_PESSOA");
 			ResultSet set = statement.getResultSet();
 			
             while (set.next()) {
-                System.out.printf("%d: %15s - %10s\n",
-                        set.getInt("id"),
-                        set.getString("name"),
-                        set.getString("email"));
+                System.out.printf("%d: %15s - %10s - %11s\n",
+                        set.getInt("id_pessoa"),
+                        set.getString("nome"),
+                        set.getString("endereco"),
+                        set.getString("cpf"));
             }
 
 		} catch (Exception e) {
