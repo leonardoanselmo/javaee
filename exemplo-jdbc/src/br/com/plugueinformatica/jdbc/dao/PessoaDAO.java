@@ -88,9 +88,9 @@ public class PessoaDAO implements GenericoDAO<PessoaDTO>{
 
 	@Override
 	public List<PessoaDTO> listarTodos() throws PersistenciaException {
+		
 		List<PessoaDTO> listaPesssoas = new ArrayList<PessoaDTO>();
-				
-				
+		
 		try {
 			Connection connection = ConexaoUtil.getInstance().getConnection();
 			
@@ -123,8 +123,35 @@ public class PessoaDAO implements GenericoDAO<PessoaDTO>{
 
 	@Override
 	public PessoaDTO buscarPorId(Integer id) throws PersistenciaException {
+		PessoaDTO pessoaDTO = null;
+		try {
+			Connection connection = ConexaoUtil.getInstance().getConnection();
+			
+			String sql = "SELECT * FROM TB_PESSOA WHERE ID_PESSOA = ?";
+			
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setInt(1, id);
+			
+			ResultSet resultSet = statement.executeQuery();
+			
+			if (resultSet.next()) {
+				pessoaDTO = new PessoaDTO();
+				pessoaDTO.setIdPessoa(resultSet.getInt("id_pessoa"));
+				pessoaDTO.setNome(resultSet.getString("nome"));
+				pessoaDTO.setCpf(resultSet.getString("cpf"));
+				pessoaDTO.setEndereco(resultSet.getString("endereco"));
+				pessoaDTO.setSexo(resultSet.getString("sexo").charAt(0));
+				pessoaDTO.setDtNascimento(resultSet.getDate("dt_nasc"));				
+			}
+			
+			connection.close();			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
 		
-		return null;
+		return pessoaDTO;
 	}
 
 
