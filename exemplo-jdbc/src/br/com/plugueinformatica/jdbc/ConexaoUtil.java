@@ -51,69 +51,15 @@ public class ConexaoUtil {
 	}
 	
 	public void inserir(PessoaDTO pessoaDTO) throws SQLException {
-		Connection connection = null;
-		try {
-			connection = getConnection();
-			
-			String sql = "INSERT INTO TB_PESSOA(NOME, CPF, ENDERECO, SEXO, DT_NASC)"+
-					"VALUES(?, ?, ?, ?, ?)";
-			
-			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setString(1, pessoaDTO.getNome());
-			statement.setString(2, pessoaDTO.getCpf());
-			statement.setString(3, pessoaDTO.getEndereco());
-			statement.setString(4, String.valueOf(pessoaDTO.getSexo()));
-			statement.setDate(5, new Date(pessoaDTO.getDtNascimento().getTime()));
-			
-			statement.execute();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			connection.close();
-		}
+		
 	}
 	
 	public void atualizar(PessoaDTO pessoaDTO) throws SQLException {
-		Connection connection = null;
-		try {
-			connection = getConnection();
-			
-			String sql = "UPDATE TB_PESSOA SET NOME = ?, CPF = ?, ENDERECO = ?, SEXO = ?, DT_NASC = ?"+
-						 " WHERE ID_PESSOA = ?";
-			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setString(1, pessoaDTO.getNome());
-			statement.setString(2, pessoaDTO.getCpf());
-			statement.setString(3, pessoaDTO.getEndereco());
-			statement.setString(4, String.valueOf(pessoaDTO.getSexo()));
-			statement.setDate(5, new Date(pessoaDTO.getDtNascimento().getTime()));
-			statement.setInt(6, pessoaDTO.getIdPessoa());			
-			
-			statement.execute();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			connection.close();
-		}
+		
 	}
 	
 	public void remover(Integer idPessoa) throws SQLException {
-		Connection connection = null;
-		try {
-			
-			connection = getConnection();
-			
-			String sql = "DELETE FROM TB_PESSOA WHERE ID_PESSOA = ?";
-			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setInt(1, idPessoa);
-			statement.execute();			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			connection.close();
-		}
+		
 	}
 	
 	public static void main(String[] args) {
