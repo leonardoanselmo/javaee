@@ -119,13 +119,14 @@ public class ConexaoUtil {
 	public static void main(String[] args) {
 		try {			
 			PessoaDTO dto = new PessoaDTO();
-			dto.setNome("Lessa Anselmo");
+			dto.setIdPessoa(4);
+			dto.setNome("Maria Lessa de Freitas Anselmo");
 			dto.setEndereco("Rua Luiz da Silva Guerra, 13");
 			dto.setCpf("12345678945");
 			dto.setSexo('F');
 			dto.setDtNascimento(new java.util.Date());
 			
-			getInstance().inserir(dto);
+			getInstance().remover(dto.getIdPessoa());
 			
 			getInstance().listar();
 		} catch (SQLException e) {			
