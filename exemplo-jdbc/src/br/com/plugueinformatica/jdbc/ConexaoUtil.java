@@ -35,7 +35,8 @@ public class ConexaoUtil {
 			ResultSet resultSet = statement.executeQuery();
 			
 			while (resultSet.next()) {
-				System.out.println(resultSet.getInt("id_pessoa") + " - " + resultSet.getString("nome"));				
+				System.out.println(resultSet.getInt("id_pessoa") + " - "
+								+ resultSet.getString("nome"));				
 				
 			}
 			
@@ -47,10 +48,9 @@ public class ConexaoUtil {
 	}
 	
 	public static void main(String[] args) {
-		try {
+		try {			
 			getInstance().listar();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
 	}
