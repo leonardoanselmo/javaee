@@ -15,8 +15,7 @@ public class LoginBO {
 			} else if (loginDTO.getSenha() == null || "".equals(loginDTO.getSenha())){
 				throw new NegocioException("Senha obrigatória!");
 			} else {
-				LoginDAO loginDAO = new LoginDAO();
-				
+				LoginDAO loginDAO = new LoginDAO();				
 				resultado = loginDAO.logar(loginDTO);
 			}
 			
