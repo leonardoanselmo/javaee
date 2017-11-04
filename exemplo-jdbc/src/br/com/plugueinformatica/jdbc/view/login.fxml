@@ -15,7 +15,7 @@
 				<Font name="System Bold" size="20.0" />
 			</font>
 		</Label>
-		<TextField id="txtLogin" layoutX="200.0" layoutY="150.0" prefWidth="200.0" />
+		<TextField id="txtLogin" fx:id="btnLogin" layoutX="200.0" layoutY="150.0" prefWidth="200.0" />
 		<Label id="lblSenha" layoutX="200.0" layoutY="184.0" text="Senha:">
 			<font>
 				<Font name="System Bold" size="20.0" />
