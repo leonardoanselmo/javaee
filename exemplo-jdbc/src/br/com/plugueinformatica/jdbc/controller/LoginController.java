@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 import br.com.plugueinformatica.jdbc.bo.LoginBO;
 import br.com.plugueinformatica.jdbc.dto.LoginDTO;
 import br.com.plugueinformatica.jdbc.exception.NegocioException;
+import br.com.plugueinformatica.jdbc.gui.LoginFrame;
+import br.com.plugueinformatica.jdbc.gui.TelaPrincipalFrame;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -13,6 +15,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 	
@@ -45,6 +48,13 @@ public class LoginController implements Initializable {
 		try {
 			if(loginBO.logar(loginDTO)) {
 				exibirDialogoInformacao("Login efetuado com sucesso.");
+				Stage stage = (Stage) btnEntrar.getScene().getWindow();
+				stage.close();
+				try {					
+		            new TelaPrincipalFrame().start(new Stage());		            
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
 			} else {
 				exibirDialogoErro("Dados inválidos.");
 			}
