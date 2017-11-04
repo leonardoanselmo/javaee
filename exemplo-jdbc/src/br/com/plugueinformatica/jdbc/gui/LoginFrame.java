@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class LoginFrame extends Application{
-
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		Parent parent = FXMLLoader.
@@ -15,11 +15,11 @@ public class LoginFrame extends Application{
 	        Scene scene = new Scene(parent);
 	        stage.setScene(scene);
 	        stage.setTitle("Tela de Login");
-	        stage.show();
+	        stage.show();	        
 		
 	}
-	
-	 public static void main(String[] args) {
+		
+	public static void main(String[] args) {
 	        launch(args);
 	}
 
