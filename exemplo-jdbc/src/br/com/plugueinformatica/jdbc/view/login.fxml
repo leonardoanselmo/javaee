@@ -15,14 +15,14 @@
 				<Font name="System Bold" size="20.0" />
 			</font>
 		</Label>
-		<TextField id="txtLogin" fx:id="btnLogin" layoutX="200.0" layoutY="150.0" prefWidth="200.0" />
+		<TextField id="txtLogin" fx:id="txtLogin" layoutX="200.0" layoutY="150.0" prefWidth="200.0" />
 		<Label id="lblSenha" layoutX="200.0" layoutY="184.0" text="Senha:">
 			<font>
 				<Font name="System Bold" size="20.0" />
 			</font>
 		</Label>
-		<PasswordField id="txtSenha" fx:id="btnSenha" layoutX="200.0" layoutY="210.0" prefWidth="200.0" />
-		<Button fx:id="btnEntrar" layoutX="200.0" layoutY="250.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="87.0" text="Entrar" />
-		<Button fx:id="btnSair" layoutX="313.0" layoutY="250.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="87.0" text="Sair" />
+		<PasswordField id="txtSenha" fx:id="txtSenha" layoutX="200.0" layoutY="210.0" prefWidth="200.0" />
+		<Button fx:id="btnEntrar" layoutX="200.0" layoutY="250.0" mnemonicParsing="false" onAction="#entrarNoSistema" prefHeight="27.0" prefWidth="87.0" text="Entrar" />
+		<Button fx:id="btnSair" layoutX="313.0" layoutY="250.0" mnemonicParsing="false" onAction="#sairDoSistema" prefHeight="27.0" prefWidth="87.0" text="Sair" />
 	</children>
 </AnchorPane>
