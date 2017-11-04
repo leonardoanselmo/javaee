@@ -8,30 +8,21 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-	prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="br.com.plugueinformatica.jdbc.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.plugueinformatica.jdbc.controller.LoginController">
 	<children>
 		<Label id="lblLogin" layoutX="200.0" layoutY="124.0" text="Login:">
 			<font>
 				<Font name="System Bold" size="20.0" />
 			</font>
 		</Label>
-		<TextField id="txtLogin" layoutX="200.0" layoutY="150.0"
-			prefWidth="200.0" />
+		<TextField id="txtLogin" layoutX="200.0" layoutY="150.0" prefWidth="200.0" />
 		<Label id="lblSenha" layoutX="200.0" layoutY="184.0" text="Senha:">
 			<font>
 				<Font name="System Bold" size="20.0" />
 			</font>
 		</Label>
-		<PasswordField id="txtSenha" layoutX="200.0" layoutY="210.0"
-			prefWidth="200.0" />
-		<Button id="btnEntrar" layoutX="200.0" layoutY="250.0"
-			mnemonicParsing="false" onAction="#btnEntrarAction" prefHeight="27.0"
-			prefWidth="87.0" text="Entrar" />
-		<Button id="btnSair" layoutX="313.0" layoutY="250.0"
-			mnemonicParsing="false" onAction="#btnSairAction" prefHeight="27.0"
-			prefWidth="87.0" text="Sair" />
+		<PasswordField id="txtSenha" fx:id="btnSenha" layoutX="200.0" layoutY="210.0" prefWidth="200.0" />
+		<Button fx:id="btnEntrar" layoutX="200.0" layoutY="250.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="87.0" text="Entrar" />
+		<Button fx:id="btnSair" layoutX="313.0" layoutY="250.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="87.0" text="Sair" />
 	</children>
 </AnchorPane>
