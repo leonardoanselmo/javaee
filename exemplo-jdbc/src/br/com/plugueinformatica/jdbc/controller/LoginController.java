@@ -69,22 +69,23 @@ public class LoginController implements Initializable {
     		System.exit(0);
     }    
     
-    private void exibirDialogoInformacao(String informacao) {
-    		Alert alert = new Alert(AlertType.INFORMATION);
-    		alert.setTitle("Informação");
-    		alert.setHeaderText(null);
-    		alert.setContentText(informacao);
-    		
-    		alert.showAndWait();
-    }
-    
-    private void exibirDialogoErro(String erro) {
+    public void exibirDialogoInformacao(String informacao) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Informação");
+		alert.setHeaderText(null);
+		alert.setContentText(informacao);
+		
+		alert.showAndWait();
+	}
+
+	public void exibirDialogoErro(String erro) {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Informação");
 		alert.setHeaderText(null);
 		alert.setContentText(erro);
 		
 		alert.showAndWait();
-    }	
+	}	
+    
 
 }
