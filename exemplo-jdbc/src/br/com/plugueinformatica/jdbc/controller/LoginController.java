@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import br.com.plugueinformatica.jdbc.bo.LoginBO;
 import br.com.plugueinformatica.jdbc.dto.LoginDTO;
 import br.com.plugueinformatica.jdbc.exception.NegocioException;
-import br.com.plugueinformatica.jdbc.gui.LoginFrame;
 import br.com.plugueinformatica.jdbc.gui.TelaPrincipalFrame;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -48,7 +47,7 @@ public class LoginController implements Initializable {
 		try {
 			if(loginBO.logar(loginDTO)) {
 				exibirDialogoInformacao("Login efetuado com sucesso.");
-				Stage stage = (Stage) btnEntrar.getScene().getWindow();
+				Stage stage = (Stage) btnEntrar.getScene().getWindow();				
 				stage.close();
 				try {					
 		            new TelaPrincipalFrame().start(new Stage());		            
