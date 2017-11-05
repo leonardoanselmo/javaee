@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import br.com.plugueinformatica.jdbc.dao.PessoaDAO;
 import br.com.plugueinformatica.jdbc.dto.PessoaDTO;
+import br.com.plugueinformatica.jdbc.util.MensagensUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -50,8 +51,8 @@ public class TelaPrincipalController implements Initializable{
 	}
 	
 	@FXML
-	void salvarPessoa() {
-    		limparFields();
+	void salvarPessoa() {    		
+    		
     		PessoaDTO pessoaDTO = new PessoaDTO();
     		pessoaDTO.setNome(txtNome.getText());
     		pessoaDTO.setCpf(txtCPF.getText());
@@ -65,10 +66,12 @@ public class TelaPrincipalController implements Initializable{
     		PessoaDAO pessoaDAO = new PessoaDAO();
     		try {
     			pessoaDAO.inserir(pessoaDTO);
-    			exibirDialogoInformacao("Pessoa cadastrado com sucesso.");
+    			MensagensUtil.exibirDialogoInformacao("Pessoa cadastrado com sucesso.");
 		} catch (Exception e) {
 			e.printStackTrace();
-			exibirDialogoErro("Falha ao cadastrar a pessoa.");
+			MensagensUtil.exibirDialogoErro("Falha ao cadastrar a pessoa.");
+		} finally {
+			limparFields();
 		}
 		
     		
@@ -83,23 +86,6 @@ public class TelaPrincipalController implements Initializable{
 	}
 	
 
-    public void exibirDialogoInformacao(String informacao) {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Informação");
-		alert.setHeaderText(null);
-		alert.setContentText(informacao);
-		
-		alert.showAndWait();
-	}
-
-	public void exibirDialogoErro(String erro) {
-		Alert alert = new Alert(AlertType.ERROR);
-		alert.setTitle("Informação");
-		alert.setHeaderText(null);
-		alert.setContentText(erro);
-		
-		alert.showAndWait();
-	}	
-
+   
 
 }
