@@ -5,9 +5,14 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 
 public class MensagensUtil {
-	
-	public static void addMsg(Object component, String msg) {
+			
+	public void addMsg(Object component, String msg) {
 		JOptionPane.showMessageDialog((Component) component, msg);
 	}
-
+	
+	public void exibirMensagem(String mensagem) {
+		System.out.println(mensagem);
+	}
+	
+	
 }
