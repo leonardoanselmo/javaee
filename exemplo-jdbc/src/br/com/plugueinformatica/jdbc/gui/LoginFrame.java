@@ -15,8 +15,7 @@ public class LoginFrame extends Application{
 	        Scene scene = new Scene(parent);
 	        stage.setScene(scene);
 	        stage.setTitle("Tela de Login");
-	        stage.show();	        
-		
+	        stage.show();		
 	}
 		
 	public static void main(String[] args) {
