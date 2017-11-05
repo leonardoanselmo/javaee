@@ -1,18 +1,28 @@
 package br.com.plugueinformatica.jdbc.util;
 
-import java.awt.Component;
-
-import javax.swing.JOptionPane;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class MensagensUtil {
 			
-	public void addMsg(Object component, String msg) {
-		JOptionPane.showMessageDialog((Component) component, msg);
+	public static void exibirDialogoInformacao(String informacao) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Informação");
+		alert.setHeaderText(null);
+		alert.setContentText(informacao);
+		
+		alert.showAndWait();
 	}
-	
-	public void exibirMensagem(String mensagem) {
-		System.out.println(mensagem);
-	}
-	
+
+	public static void exibirDialogoErro(String erro) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Informação");
+		alert.setHeaderText(null);
+		alert.setContentText(erro);
+		
+		alert.showAndWait();
+	}	
+
+		
 	
 }
