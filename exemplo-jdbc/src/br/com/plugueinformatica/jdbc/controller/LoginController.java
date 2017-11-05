@@ -7,10 +7,9 @@ import br.com.plugueinformatica.jdbc.bo.LoginBO;
 import br.com.plugueinformatica.jdbc.dto.LoginDTO;
 import br.com.plugueinformatica.jdbc.exception.NegocioException;
 import br.com.plugueinformatica.jdbc.gui.TelaPrincipalFrame;
+import br.com.plugueinformatica.jdbc.util.MensagensUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -46,7 +45,7 @@ public class LoginController implements Initializable {
 		LoginBO loginBO = new LoginBO();
 		try {
 			if(loginBO.logar(loginDTO)) {
-				exibirDialogoInformacao("Login efetuado com sucesso.");
+				MensagensUtil.exibirDialogoInformacao("Login efetuado com sucesso.");
 				Stage stage = (Stage) btnEntrar.getScene().getWindow();				
 				stage.close();
 				try {					
@@ -55,11 +54,11 @@ public class LoginController implements Initializable {
 		            e.printStackTrace();
 		        }
 			} else {
-				exibirDialogoErro("Dados inválidos.");
+				MensagensUtil.exibirDialogoErro("Dados inválidos.");
 			}
 		} catch (NegocioException e) {		
 			e.printStackTrace();
-			exibirDialogoErro(e.getMessage());
+			MensagensUtil.exibirDialogoErro(e.getMessage());
 		}
 
     }
@@ -68,24 +67,5 @@ public class LoginController implements Initializable {
     void sairDoSistema() {
     		System.exit(0);
     }    
-    
-    public void exibirDialogoInformacao(String informacao) {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Informação");
-		alert.setHeaderText(null);
-		alert.setContentText(informacao);
-		
-		alert.showAndWait();
-	}
-
-	public void exibirDialogoErro(String erro) {
-		Alert alert = new Alert(AlertType.ERROR);
-		alert.setTitle("Informação");
-		alert.setHeaderText(null);
-		alert.setContentText(erro);
-		
-		alert.showAndWait();
-	}	
-    
-
+   
 }
