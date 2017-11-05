@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="377.0" prefWidth="577.0" style="-fx-background-color: #ffffff;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+        <tabs>
+          <Tab text="Cadastro">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Pane layoutX="-6.0" layoutY="-4.0" prefHeight="322.0" prefWidth="587.0" style="-fx-background-color: #EBF4F3;">
+                           <children>
+                              <Label id="lblNome" layoutX="16.0" layoutY="14.0" text="Nome:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtNome" layoutX="16.0" layoutY="33.0" prefHeight="27.0" prefWidth="564.0" />
+                              <Label id="lblCPF" layoutX="16.0" layoutY="72.0" text="CPF:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtCPF" layoutX="16.0" layoutY="91.0" prefHeight="27.0" prefWidth="163.0" />
+                              <Label id="lblEndereco" layoutX="16.0" layoutY="133.0" text="Endereço:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtEndereco" layoutX="16.0" layoutY="152.0" prefHeight="27.0" prefWidth="564.0" />
+                              <RadioButton id="rbtMasculino" layoutX="16.0" layoutY="213.0" mnemonicParsing="false" selected="true" text="Masculino">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupo" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="rbtFeminino" layoutX="16.0" layoutY="239.0" mnemonicParsing="false" text="Feminino" toggleGroup="$grupo" />
+                              <Label id="lblSexo" layoutX="16.0" layoutY="190.0" text="Sexo:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker layoutX="197.0" layoutY="213.0" />
+                              <Label id="lblSexo" layoutX="197.0" layoutY="190.0" text="Data Nascimento:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button id="btnGravar" layoutX="16.0" layoutY="281.0" mnemonicParsing="false" text="Gravar" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Consulta">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Pane layoutY="-6.0" prefHeight="325.0" prefWidth="580.0" style="-fx-background-color: EBF4F3;" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
