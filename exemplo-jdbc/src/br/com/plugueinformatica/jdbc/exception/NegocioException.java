@@ -11,5 +11,10 @@ public class NegocioException extends Exception {
 	public NegocioException(String msg) {
 		super(msg);
 	}
+	
+	public double somar(double num1, double num2) {
+		return num1 + num2;
+	}
+
 
 }
