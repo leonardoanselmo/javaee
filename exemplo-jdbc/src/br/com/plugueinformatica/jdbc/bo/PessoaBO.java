@@ -14,11 +14,7 @@ public class PessoaBO {
 			pessoaDAO.inserir(pessoaDTO);			
 		} catch (Exception exception) {
 			throw new NegocioException(exception.getMessage()); 			
-		}
-		
-		
+		}		
 	}
 	
-	
-
 }
