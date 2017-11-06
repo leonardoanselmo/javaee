@@ -2,18 +2,25 @@ package br.com.plugueinformatica.jdbc.controller;
 
 import java.net.URL;
 import java.sql.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import br.com.plugueinformatica.jdbc.bo.PessoaBO;
+import br.com.plugueinformatica.jdbc.dao.PessoaDAO;
 import br.com.plugueinformatica.jdbc.dto.PessoaDTO;
+import br.com.plugueinformatica.jdbc.exception.PersistenciaException;
 import br.com.plugueinformatica.jdbc.util.MensagensUtil;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TelaPrincipalController implements Initializable{
 	
@@ -41,10 +48,31 @@ public class TelaPrincipalController implements Initializable{
 	@FXML
     private Button btnSalvar;
 	
+	@FXML
+    private TableView<PessoaDTO> Pessoas;	
+
+	@FXML
+    private TableColumn<PessoaDTO, Integer> idPessoa;
 	
-	@Override
+    @FXML
+    private TableColumn<PessoaDTO, String> nomePessoa;
+    
+    @FXML
+    private TableColumn<PessoaDTO, String> cpfPessoa;
+	
+	@FXML
+    private TableColumn<PessoaDTO, String> enderecoPessoa;	
+
+    @FXML
+    private TableColumn<PessoaDTO, Character> sexoPessoa;
+
+    @FXML
+    private TableColumn<PessoaDTO, Date> dtNascimentoPessoa;    
+	
+	@Override	
 	public void initialize(URL location, ResourceBundle resources) {
 		
+		listagemPessoas();
 		
 	}
 	
@@ -76,7 +104,7 @@ public class TelaPrincipalController implements Initializable{
     		
     	}
 	
-	public void limparFields() {
+	private void limparFields() {
 		txtNome.clear();
 		txtCPF.clear();
 		txtEndereco.clear();
@@ -84,6 +112,25 @@ public class TelaPrincipalController implements Initializable{
 		dtNascimento.setValue(null);		
 	}
 	
+	private void listagemPessoas() {
+		
+		PessoaDAO pessoaDAO = new PessoaDAO();
+		
+		idPessoa.setCellValueFactory(new PropertyValueFactory<>("idPessoa"));
+		nomePessoa.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		cpfPessoa.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		enderecoPessoa.setCellValueFactory(new PropertyValueFactory<>("endereco"));
+		sexoPessoa.setCellValueFactory(new PropertyValueFactory<>("sexo"));
+		dtNascimentoPessoa.setCellValueFactory(new PropertyValueFactory<>("dtNascimento"));
+		
+		try {					
+			List<PessoaDTO> resultado = pessoaDAO.listarTodos();
+			Pessoas.setItems(FXCollections.observableList(resultado));
+		} catch (PersistenciaException e) {
+			e.printStackTrace();
+		}		
+		
+	}
 
    
 
