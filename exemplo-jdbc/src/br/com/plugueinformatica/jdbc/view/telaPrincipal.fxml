@@ -62,7 +62,19 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Pane layoutY="-6.0" prefHeight="325.0" prefWidth="580.0" style="-fx-background-color: EBF4F3;" />
+                        <Pane layoutY="-6.0" prefHeight="325.0" prefWidth="580.0" style="-fx-background-color: EBF4F3;">
+                           <children>
+                              <TableView fx:id="Pessoas" layoutX="1.0" layoutY="6.0" prefHeight="323.0" prefWidth="580.0">
+                                <columns>
+                                  <TableColumn fx:id="idPessoa" editable="false" prefWidth="22.0" text="ID" />
+                                  <TableColumn fx:id="nomePessoa" editable="false" prefWidth="173.0" text="Nome" />
+                                    <TableColumn fx:id="cpfPessoa" editable="false" prefWidth="114.0" text="CPF" />
+                                    <TableColumn fx:id="enderecoPessoa" editable="false" prefWidth="152.0" text="Endereço" />
+                                    <TableColumn fx:id="sexoPessoa" editable="false" prefWidth="46.0" text="Sexo" />
+                                    <TableColumn fx:id="dtNascimentoPessoa" editable="false" prefWidth="72.0" text="Dt. Nasc." />
+                                </columns>
+                              </TableView>
+                           </children></Pane>
                      </children>
                   </AnchorPane>
             </content>
