@@ -72,8 +72,7 @@ public class TelaPrincipalController implements Initializable{
 	@Override	
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		//listagemPessoas();
-		
+			
 	}
 	
 	@FXML
@@ -131,13 +130,5 @@ public class TelaPrincipalController implements Initializable{
 			e.printStackTrace();
 		}		
     }
-	
-	private void listagemPessoas() {
-		
-		
-		
-	}
-
-   
 
 }
