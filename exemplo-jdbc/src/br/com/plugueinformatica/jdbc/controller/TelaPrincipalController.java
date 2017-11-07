@@ -72,7 +72,7 @@ public class TelaPrincipalController implements Initializable{
 	@Override	
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		listagemPessoas();
+		//listagemPessoas();
 		
 	}
 	
@@ -112,7 +112,8 @@ public class TelaPrincipalController implements Initializable{
 		dtNascimento.setValue(null);		
 	}
 	
-	private void listagemPessoas() {
+	@FXML
+    void consultarPessoas() {
 		
 		PessoaDAO pessoaDAO = new PessoaDAO();
 		
@@ -129,6 +130,11 @@ public class TelaPrincipalController implements Initializable{
 		} catch (PersistenciaException e) {
 			e.printStackTrace();
 		}		
+    }
+	
+	private void listagemPessoas() {
+		
+		
 		
 	}
 
