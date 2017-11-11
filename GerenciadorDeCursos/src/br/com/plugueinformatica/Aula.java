@@ -2,22 +2,24 @@ package br.com.plugueinformatica;
 
 public class Aula {
 	
-	private String nome;
-	private Integer tempo;
+	private String titulo;
+	private int tempo;
 	
-	public Aula(String nome, Integer tempo) {		
-		this.nome = nome;
+	public Aula(String titulo, Integer tempo) {
+		this.titulo = titulo;
 		this.tempo = tempo;
 	}
 	
-	public String getNome() {
-		return nome;
+	public String getTitulo() {
+		return titulo;
 	}
 	
-	public Integer getTempo() {
+	public int getTempo() {
 		return tempo;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Aula: "+getTitulo()+", "+getTempo()+" minutos";
+	}
 }
