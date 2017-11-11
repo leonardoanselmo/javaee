@@ -8,3 +8,5 @@
 */target
 .recommenders
 */.tern-project
+*/*.iml
+*/.idea
