@@ -2,7 +2,6 @@ package br.com.plugueinformatica;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Curso {
@@ -30,5 +29,17 @@ public class Curso {
 
     public void adiciona(Aula aula){
         this.aulas.add(aula);
+    }
+
+    public int getTempoTotal(){
+        int tempoTotal = 0;
+        for (Aula aula: aulas) {
+            tempoTotal += aula.getTempo();
+        }
+        return tempoTotal;
+    }
+
+    public int getTempoTotalJava8(){
+        return this.aulas.stream().mapToInt(Aula::getTempo).sum();
     }
 }
