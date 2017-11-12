@@ -1,14 +1,13 @@
 package br.com.plugueinformatica;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Curso {
 
     private String nome;
     private String instrutor;
     private List<Aula> aulas = new ArrayList<>();
+    private Set<Aluno> aluno = new HashSet<>();
 
     public Curso(String nome, String instrutor){
         this.nome = nome;
@@ -48,5 +47,13 @@ public class Curso {
         return "Curso: "+nome+", tempo total: "+getTempoTotalJava8()+"\n"+
                 "Aulas: "+this.aulas;
 
+    }
+
+    public void matricula(Aluno aluno) {
+        this.aluno.add(aluno);
+    }
+
+    public Set<Aluno> getAluno() {
+        return Collections.unmodifiableSet(aluno);
     }
 }
