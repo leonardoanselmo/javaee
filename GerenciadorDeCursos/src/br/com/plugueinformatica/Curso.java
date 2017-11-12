@@ -42,4 +42,11 @@ public class Curso {
     public int getTempoTotalJava8(){
         return this.aulas.stream().mapToInt(Aula::getTempo).sum();
     }
+
+    @Override
+    public String toString() {
+        return "Curso: "+nome+", tempo total: "+getTempoTotalJava8()+"\n"+
+                "Aulas: "+this.aulas;
+
+    }
 }
