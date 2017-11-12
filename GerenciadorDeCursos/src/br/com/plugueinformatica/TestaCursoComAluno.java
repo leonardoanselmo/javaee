@@ -23,6 +23,13 @@ public class TestaCursoComAluno {
             System.out.println(a);
         });
 
+        System.out.println("O Aluno: "+a1+" está matriculado?");
+        System.out.println(javaColecoes.estaMatriculado(a1));
+
+
+        Aluno anselmo = new Aluno("Leonardo Anselmo", 3245);
+        System.out.println(javaColecoes.estaMatriculado(anselmo));
+
 
 
     }
