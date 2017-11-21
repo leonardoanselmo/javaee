@@ -1,4 +1,4 @@
-package br.com.plugueinformatica;
+package br.com.plugueinformatica.main;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
