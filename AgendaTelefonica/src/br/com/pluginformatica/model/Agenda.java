@@ -21,6 +21,10 @@ public class Agenda {
 	@Temporal(TemporalType.DATE)
 	private Date dataRegistro;
 	
+	public Agenda() {
+		
+	}
+	
 	public Agenda(String nome, String telefone, Date dataRegistro) {
 		this.nome = nome;
 		this.telefone = telefone;
