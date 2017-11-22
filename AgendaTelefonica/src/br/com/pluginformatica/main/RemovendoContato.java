@@ -1,8 +1,10 @@
-package br.com.pluginformatica.model;
+package br.com.pluginformatica.main;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import br.com.pluginformatica.model.Agenda;
 
 public class RemovendoContato {
 
